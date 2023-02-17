@@ -132,7 +132,6 @@ public class MenuActivity extends AppCompatActivity implements MaxAdListener {
 
         // Reset retry attempt
         retryAttempt = 0;
-        Toast.makeText(this, "Open Torch...", Toast.LENGTH_SHORT).show();
     }
 
     @Override
