@@ -1,8 +1,7 @@
-package com.example.stopwatchpro;
+package com.sharkBytesLab.stopwatchPro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;

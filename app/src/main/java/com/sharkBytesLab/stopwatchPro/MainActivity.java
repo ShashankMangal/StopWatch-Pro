@@ -1,4 +1,4 @@
-package com.example.stopwatchpro;
+package com.sharkBytesLab.stopwatchPro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
