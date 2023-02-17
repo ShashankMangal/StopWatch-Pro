@@ -18,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        android:layout_marginLeft="8dp" />
     <ImageView
         android:id="@+id/icanchor"
         android:layout_width="358dp"
@@ -37,11 +37,10 @@
             android:layout_width="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="48dp"
             android:textColor="#FFF"
-            android:textSize="62sp"
+            android:textSize="60sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintBottom_toTopOf="@id/btnpause"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bgcircle"
 
