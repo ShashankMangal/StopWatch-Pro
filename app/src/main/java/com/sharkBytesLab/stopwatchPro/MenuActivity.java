@@ -119,7 +119,7 @@ public class MenuActivity extends AppCompatActivity implements MaxAdListener {
     public void onBackPressed() {
         super.onBackPressed();
 
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        startActivity(new Intent(getApplicationContext(), StopWatch.class));
         finish();
 
     }
