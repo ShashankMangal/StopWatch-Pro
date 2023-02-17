@@ -8,6 +8,10 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.*;
+
+import com.applovin.sdk.AppLovinSdk;
+import com.applovin.sdk.AppLovinSdkConfiguration;
+
 public class MainActivity extends AppCompatActivity {
     TextView tvSplash,tvSubSplash;
     Button btnget;
@@ -18,6 +22,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        AppLovinSdk.getInstance( this ).setMediationProvider( "max" );
+        AppLovinSdk.initializeSdk( this, new AppLovinSdk.SdkInitializationListener() {
+            @Override
+            public void onSdkInitialized(final AppLovinSdkConfiguration configuration)
+            {
+                // AppLovin SDK is initialized, start loading ads
+            }
+        } );
 
         tvSplash =findViewById(R.id.tvSplash);
         tvSubSplash =findViewById(R.id.tvSubSplash);

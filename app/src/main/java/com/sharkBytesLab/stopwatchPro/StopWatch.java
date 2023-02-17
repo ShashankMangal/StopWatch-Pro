@@ -2,6 +2,7 @@ package com.sharkBytesLab.stopwatchPro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
@@ -14,7 +15,7 @@ import android.widget.TextView;
 
 public class StopWatch extends AppCompatActivity {
     Button btnstart,btnstop,btnreset,btnpause;
-    ImageView icanchor;
+    ImageView icanchor, menu;
     Animation roundingalone;
     Chronometer timerHere;
     TextView lap;
@@ -32,6 +33,7 @@ public class StopWatch extends AppCompatActivity {
         btnstop = findViewById(R.id.btnstop);
         icanchor = findViewById(R.id.icanchor);
         timerHere =findViewById(R.id.timerHere);
+        menu =findViewById(R.id.stopwatch_menu);
 
 
         //create optional animation
@@ -62,6 +64,14 @@ public class StopWatch extends AppCompatActivity {
                 running =true;
             }}
         });
+
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(StopWatch.this, MenuActivity.class));
+            }
+        });
+
         btnstop.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v)
             {   icanchor.clearAnimation();
