@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.SystemClock;
 import android.view.View;
 import android.view.animation.Animation;
@@ -12,6 +14,7 @@ import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class StopWatch extends AppCompatActivity {
     Button btnstart,btnstop,btnreset,btnpause;
@@ -21,6 +24,8 @@ public class StopWatch extends AppCompatActivity {
     TextView lap;
     boolean running=false;
     long time;
+
+    boolean doubleBackToExitPressedOnce = false;
     
 
     @Override
@@ -108,4 +113,23 @@ public class StopWatch extends AppCompatActivity {
 
 
     }
+
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "BACK again to exit", Toast.LENGTH_SHORT).show();
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
+    }
+
 }
